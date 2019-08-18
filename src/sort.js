@@ -5,7 +5,7 @@ const objs = []
 const sort = R.curry((packageName, end) => {
   S.log(`Sorting results... please allow a few minutes`, {})
   R.times((i) => {
-    const res = fs.readFileSync(`/Users/dteiml/dev/github-by-stars/dataset/${packageName}/${i}.html`, { encoding: 'utf-8' })
+    const res = fs.readFileSync(`dataset/${packageName}/${i}.html`, { encoding: 'utf-8' })
     const $ = cheerio.load(res)
     const els = $(`div.Box > div.Box-row`).toArray()
     els.map(el => {
