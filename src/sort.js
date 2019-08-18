@@ -15,7 +15,7 @@ const sort = R.curry((packageName, end) => {
       const repo = $('a[data-hovercard-type="repository"]', el).text()
       const repoUrl = `https://github.com` + $('a[data-hovercard-type="repository"]', el).attr('href')
       const noOf = $('span.text-gray-light.text-bold.pl-3', el).text()
-      const [stars, forks] = R.map(Number.parseInt, R.match(/\d+/g, noOf))
+      const [stars, forks] = R.map(Number.parseInt, R.match(/\d+/g, noOf.replace(/,/g, '')))
       const a = { author, repo, repoUrl, stars, forks }
       objs.push(a)
       // const aLog = util.inspect(a)
