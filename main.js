@@ -2,7 +2,6 @@ import getHtmls from './src/getHtmls'
 import sort from './src/sort'
 import {argv} from 'yargs'
 import dotenv from 'dotenv'
-import { isMainThread } from 'worker_threads';
 const result = dotenv.config()
 
 const packageAuthor = argv.author || `ramda`
